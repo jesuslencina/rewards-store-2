@@ -102,15 +102,6 @@ function Nav() {
                 className="button my-button">
                 1000
               </button>
-
-              <button
-                onClick={() => {
-                  fetchMorePoints(500);
-                  handleModal();
-                }}
-                className="button my-button">
-                ERROR
-              </button>
             </div>
             <button
               className="button is-danger my-cancel-button"
