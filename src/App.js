@@ -3,7 +3,7 @@ import './styles/css/mystyles.css';
 import { DataProvider } from './components/Context';
 import Nav from './components/Nav/Nav';
 import Header from './components/Header/Header';
-import Filters from './components/Filters/Filter';
+import MainContainer from './components/MainContainer/MainContainer';
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
       <DataProvider>
         <Nav />
         <Header />
-        <Filters />
+        <MainContainer />
       </DataProvider>
     </div>
   );

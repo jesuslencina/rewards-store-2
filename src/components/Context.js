@@ -87,8 +87,8 @@ export function DataProvider(props) {
       .then((result) => (resultmsg = result))
       .catch((error) => console.log('error', error));
 
-    console.log(resultmsg);
-
+    fetchUser();
+    //ACTIVATE MODAL
     let finalmsg;
     if (JSON.stringify(resultmsg).includes('Updated')) {
       finalmsg = 'Success';
@@ -96,7 +96,6 @@ export function DataProvider(props) {
       finalmsg = 'Error';
     }
 
-    fetchUser();
     displayModal({
       class: 'is-active',
       title: finalmsg,

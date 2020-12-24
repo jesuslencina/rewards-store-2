@@ -1,3 +1,5 @@
+import './modalStyles.css';
+
 function Modal(props) {
   return (
     <div className={`modal ${props.class}`}>
