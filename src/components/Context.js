@@ -46,6 +46,11 @@ export function DataProvider(props) {
     displayOffset: 0,
     amountOfProducts: 0,
     viewingHistory: false,
+    modal: {
+      class: '',
+      title: '',
+      msg: '',
+    },
   });
 
   ///FUNCTIONS
@@ -65,6 +70,7 @@ export function DataProvider(props) {
 
   //!ADD POINTS
   const fetchMorePoints = async (amount) => {
+    let resultmsg;
     let raw = JSON.stringify({ amount: amount });
     let requestOptionsPoints = {
       method: 'POST',
@@ -78,10 +84,39 @@ export function DataProvider(props) {
       requestOptionsPoints
     )
       .then((response) => response.text())
-      .then((result) => console.log(result))
+      .then((result) => (resultmsg = result))
       .catch((error) => console.log('error', error));
 
+    console.log(resultmsg);
+
+    let finalmsg;
+    if (JSON.stringify(resultmsg).includes('Updated')) {
+      finalmsg = 'Success';
+    } else {
+      finalmsg = 'Error';
+    }
+
     fetchUser();
+    displayModal({
+      class: 'is-active',
+      title: finalmsg,
+      msg: 'Operation: Redeeming points',
+    });
+  };
+
+  //!MODAL
+  const displayModal = (object) => {
+    setSettings({
+      ...settings,
+      modal: { class: object.class, title: object.title, msg: object.msg },
+    });
+  };
+
+  const closeModal = (object) => {
+    setSettings({
+      ...settings,
+      modal: { class: '', title: '', msg: '' },
+    });
   };
 
   ///USEEFFECTS
@@ -101,6 +136,7 @@ export function DataProvider(props) {
         setSettings,
         fetchUser,
         fetchMorePoints,
+        closeModal,
       }}>
       {props.children}
     </Context.Provider>
