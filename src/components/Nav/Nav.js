@@ -19,7 +19,7 @@ function Nav() {
       aria-label="main navigation">
       <div className="navbar-brand">
         <a className="navbar-item" href="https://aerolab.co/">
-          <img src={logo} width="112" height="28" />
+          <img src={logo} width="32" height="36" />
         </a>
 
         <a

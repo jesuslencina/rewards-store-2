@@ -1,0 +1,22 @@
+.header {
+  padding-top: 3rem;
+  position: relative;
+}
+
+.header-bg {
+  width: 100vw;
+}
+
+.header-heading {
+  font-size: 3rem;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  left: 2rem;
+}
+
+@media screen and (max-width: 769px) {
+  .header-heading {
+    font-size: 2rem;
+  }
+}
