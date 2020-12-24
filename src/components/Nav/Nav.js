@@ -74,7 +74,7 @@ function Nav() {
       </nav>
       <div className={`modal my-modal ${modal}`}>
         <div className="modal-background" onClick={handleModal}></div>
-        <div className="modal-card">
+        <div className="modal-card animate__bounceIn">
           <section className="modal-card-body my-modal-body">
             <h2 className="title mb-5">Select the amount of your voucher:</h2>
             <div className="buttons">
