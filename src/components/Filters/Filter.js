@@ -10,9 +10,9 @@ function Filters() {
     <div className="my-filters">
       <div className="buttons">
         <b>Filter by:</b>
-        <a className="button is-secondary">Most recent</a>
-        <a className="button is-secondary">Lowest price</a>
-        <a className="button is-secondary">Highest price</a>
+        <a className="button">Most recent</a>
+        <a className="button">Lowest price</a>
+        <a className="button">Highest price</a>
       </div>
     </div>
   );

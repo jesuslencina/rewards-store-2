@@ -20,6 +20,28 @@ p {
   cursor: not-allowed;
 }
 
+.my-modal-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.my-modal .my-button {
+  background-color: #ff7800;
+  border-color: #ff7800;
+  color: white;
+  font-weight: 600;
+}
+
+.my-modal .my-button:hover {
+  background-color: #fa9135;
+  border-color: #f0a96c;
+}
+
+.my-cancel-button {
+  width: 60%;
+}
+
 @media screen and (max-width: 769px) {
   .user-data {
     display: flex;
