@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { Context } from '../Context';
 
 import logo from '../../assets/aerolab-logo.svg';
 import coin from '../../assets/icons/coin.svg';
@@ -7,6 +8,8 @@ import './navStyles.css';
 
 function Nav() {
   const [burger, setBurger] = useState('');
+
+  const { userData } = useContext(Context);
 
   const handleBurger = () => {
     burger === '' ? setBurger('is-active') : setBurger('');
@@ -38,11 +41,10 @@ function Nav() {
       <div className="navbar-end">
         <div className={`navbar-menu ${burger}`}>
           <div className="navbar-start">
-            {' '}
             <div className="user-data navbar-item">
-              <p>Hardcoded</p>
+              <p>{userData.user.name}</p>
               <div>
-                <b>500</b> <img src={coin} alt="Coins" />
+                <b>{userData.user.points}</b> <img src={coin} alt="Coins" />
               </div>
             </div>
           </div>
