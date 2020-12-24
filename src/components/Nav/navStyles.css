@@ -1,0 +1,42 @@
+.user-data {
+  background-color: rgb(143, 141, 141);
+  margin: 0.5rem;
+  border-radius: 27px;
+}
+
+.user-data div {
+  display: flex;
+  align-items: center;
+}
+
+.user-data b,
+p {
+  margin: 0;
+  padding: 0 0.25rem;
+  color: white;
+}
+
+.user-data:hover {
+  cursor: not-allowed;
+}
+
+@media screen and (max-width: 769px) {
+  .user-data {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    margin: 0 auto;
+  }
+  .user-data p {
+    display: inline;
+  }
+
+  .navbar-brand {
+    margin: 0 auto;
+  }
+
+  .buttons {
+    justify-content: center;
+  }
+}
