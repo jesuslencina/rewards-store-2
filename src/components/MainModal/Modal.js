@@ -1,5 +1,3 @@
-import './modalStyles.css';
-
 function Modal(props) {
   return (
     <div className={`modal ${props.class}`}>
@@ -8,7 +6,7 @@ function Modal(props) {
         <section
           className="modal-card-body my-modal-body"
           style={{
-            backgroundColor: props.title === 'Success' ? '#1ddb29' : '#db241a',
+            backgroundColor: props.title === 'SUCCESS' ? '#1ddb29' : '#db241a',
           }}>
           <h2 className="has-text-white">{props.title}</h2>
           <p className="has-text-white mb-4">{props.msg}</p>

@@ -85,17 +85,19 @@ export function DataProvider(props) {
     )
       .then((response) => response.text())
       .then((result) => (resultmsg = result))
-      .catch((error) => console.log('error', error));
+      .catch((error) => {
+        resultmsg = ('Error', error);
+      });
 
     fetchUser();
+
     //ACTIVATE MODAL
     let finalmsg;
     if (JSON.stringify(resultmsg).includes('Updated')) {
-      finalmsg = 'Success';
+      finalmsg = 'SUCCESS';
     } else {
-      finalmsg = 'Error';
+      finalmsg = resultmsg.replace('{', ' ').replace('}', ' ').toUpperCase();
     }
-
     displayModal({
       class: 'is-active',
       title: finalmsg,

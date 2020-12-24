@@ -1,4 +1,5 @@
 import './styles/css/mystyles.css';
+import './styles/css/extrastyling.css';
 
 import { DataProvider } from './components/Context';
 import Nav from './components/Nav/Nav';

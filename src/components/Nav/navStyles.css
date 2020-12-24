@@ -1,3 +1,7 @@
+nav {
+  animation: bounceInDown 1.5s ease-in-out;
+}
+
 .user-data {
   background-color: rgb(143, 141, 141);
   margin: 0.5rem;
@@ -60,5 +64,10 @@ p {
 
   .buttons {
     justify-content: center;
+  }
+
+  .navbar-menu {
+    z-index: -1;
+    animation: slideInDown 0.25s ease-in-out;
   }
 }

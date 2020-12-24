@@ -1,6 +1,7 @@
 .header {
-  padding-top: 3rem;
+  padding-top: 1.8rem;
   position: relative;
+  animation: rubber;
 }
 
 .header-bg {
@@ -16,6 +17,9 @@
 }
 
 @media screen and (max-width: 769px) {
+  .header {
+    padding-top: 3rem;
+  }
   .header-heading {
     font-size: 2rem;
   }

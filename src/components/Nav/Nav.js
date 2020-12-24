@@ -74,7 +74,7 @@ function Nav() {
       </nav>
       <div className={`modal my-modal ${modal}`}>
         <div className="modal-background" onClick={handleModal}></div>
-        <div className="modal-card animate__bounceIn">
+        <div className="modal-card">
           <section className="modal-card-body my-modal-body">
             <h2 className="title mb-5">Select the amount of your voucher:</h2>
             <div className="buttons">
@@ -101,6 +101,15 @@ function Nav() {
                 }}
                 className="button my-button">
                 1000
+              </button>
+
+              <button
+                onClick={() => {
+                  fetchMorePoints(500);
+                  handleModal();
+                }}
+                className="button my-button">
+                ERROR
               </button>
             </div>
             <button
