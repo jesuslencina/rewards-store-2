@@ -12,6 +12,25 @@ function Filters() {
     setSettings({ ...settings, filtering: filter });
   };
 
+  const handlePaginationNext = () => {
+    if (Object.values(products).length / settings.displayOffset === Infinity) {
+      setSettings({ ...settings, displayOffset: settings.amountToDisplay });
+    } else if (
+      Object.values(products).length - settings.amountToDisplay >
+      settings.displayOffset
+    ) {
+      let newOffset = settings.displayOffset + settings.amountToDisplay;
+      setSettings({ ...settings, displayOffset: newOffset });
+    }
+  };
+
+  const handlePaginationPrevious = () => {
+    if (settings.displayOffset >= settings.amountToDisplay) {
+      let newOffset = settings.displayOffset - settings.amountToDisplay;
+      setSettings({ ...settings, displayOffset: newOffset });
+    }
+  };
+
   return (
     <div className="my-filters">
       <div className="buttons">
@@ -37,8 +56,16 @@ function Filters() {
           {settings.displayOffset + settings.amountToDisplay} of{' '}
           {products.length}
         </p>
-        <img src={leftArrow} alt="Left arrow" />
-        <img src={rightArrow} alt="Right arrow" />
+        <img
+          src={leftArrow}
+          onClick={handlePaginationPrevious}
+          alt="Left arrow"
+        />
+        <img
+          src={rightArrow}
+          onClick={handlePaginationNext}
+          alt="Right arrow"
+        />
       </div>
     </div>
   );

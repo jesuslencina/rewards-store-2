@@ -23,4 +23,10 @@
 .pag-buttons p,
 img {
   margin-left: 0.25rem;
+  transition: transform 0.2s;
+}
+
+.pag-buttons img:hover {
+  cursor: pointer;
+  transform: scale(1.15);
 }
