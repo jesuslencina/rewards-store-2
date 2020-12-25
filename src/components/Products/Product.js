@@ -45,7 +45,7 @@ function Product(props) {
         )}
       </div>
       <div className="card-image">
-        <figure className="image is-4by3">
+        <figure className="image is-16by9 is-fullwidth">
           <img src={props.img} alt={props.name} />
         </figure>
       </div>
