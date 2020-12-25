@@ -41,9 +41,12 @@ export function DataProvider(props) {
     },
   });
 
+  const [products, setProducts] = useState({});
+
   const [settings, setSettings] = useState({
     filtering: 'default',
     displayOffset: 0,
+    amountToDisplay: 12,
     amountOfProducts: 0,
     viewingHistory: false,
     modal: {
@@ -66,6 +69,17 @@ export function DataProvider(props) {
       .catch((error) => console.log('error', error));
 
     setUserData({ user: newUser });
+  };
+
+  //!GET PRODUCTS
+  const fetchProducts = async () => {
+    await fetch(
+      'https://coding-challenge-api.aerolab.co/products',
+      requestOptionsProducts
+    )
+      .then((response) => response.text())
+      .then((result) => setProducts(JSON.parse(result)))
+      .catch((error) => console.log('error', error));
   };
 
   //!ADD POINTS
@@ -124,7 +138,7 @@ export function DataProvider(props) {
 
   useEffect(() => {
     fetchUser();
-    // eslint-disable-next-line
+    fetchProducts();
   }, []);
 
   ///RETURN
@@ -133,9 +147,11 @@ export function DataProvider(props) {
       value={{
         userData,
         setUserData,
+        products,
         settings,
         setSettings,
         fetchUser,
+        fetchProducts,
         fetchMorePoints,
         closeModal,
       }}>

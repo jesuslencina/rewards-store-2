@@ -1,8 +1,7 @@
 import { useContext } from 'react';
+import { Context } from '../Context';
 
 import './headerStyles.css';
-
-import { Context } from '../Context';
 
 import header from '../../assets/header-x1.png';
 import Modal from '../MainModal/Modal';
