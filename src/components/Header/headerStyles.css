@@ -5,7 +5,8 @@
 }
 
 .header-bg {
-  width: 100vw;
+  width: 100%;
+  margin-left: 0;
 }
 
 .header-heading {

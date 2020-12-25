@@ -56,7 +56,14 @@ function ProductsContainer() {
     );
   });
 
-  return <div className="container my-product-container">{ProductList}</div>;
+  return (
+    <div className="container my-product-container">
+      {ProductList.slice(
+        settings.displayOffset,
+        settings.displayOffset + settings.amountToDisplay
+      )}
+    </div>
+  );
 }
 
 export default ProductsContainer;

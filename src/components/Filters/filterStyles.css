@@ -13,3 +13,14 @@
 .my-filters a {
   margin-bottom: 0 !important;
 }
+
+.pag-buttons {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.pag-buttons p,
+img {
+  margin-left: 0.25rem;
+}
