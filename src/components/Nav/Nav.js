@@ -2,6 +2,8 @@ import { useState, useContext } from 'react';
 import { Context } from '../Context';
 import disableScroll from 'disable-scroll';
 
+import PointsModal from './PointsModal';
+
 import logo from '../../assets/aerolab-logo.svg';
 import coin from '../../assets/icons/coin.svg';
 
@@ -72,45 +74,11 @@ function Nav() {
           </div>
         </div>
       </nav>
-      <div className={`modal my-modal ${modal}`}>
-        <div className="modal-background" onClick={handleModal}></div>
-        <div className="modal-card">
-          <section className="modal-card-body my-modal-body">
-            <h2 className="title mb-5">Select the amount of your voucher:</h2>
-            <div className="buttons">
-              <button
-                onClick={() => {
-                  fetchMorePoints(7500);
-                  handleModal();
-                }}
-                className="button my-button">
-                7500
-              </button>
-              <button
-                onClick={() => {
-                  fetchMorePoints(5000);
-                  handleModal();
-                }}
-                className="button my-button">
-                5000
-              </button>
-              <button
-                onClick={() => {
-                  fetchMorePoints(1000);
-                  handleModal();
-                }}
-                className="button my-button">
-                1000
-              </button>
-            </div>
-            <button
-              className="button is-danger my-cancel-button"
-              onClick={handleModal}>
-              Cancel
-            </button>
-          </section>
-        </div>
-      </div>
+      <PointsModal
+        modal={modal}
+        handleModal={handleModal}
+        fetchMorePoints={fetchMorePoints}
+      />
     </>
   );
 }
