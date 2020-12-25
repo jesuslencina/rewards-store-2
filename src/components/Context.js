@@ -85,26 +85,30 @@ export function DataProvider(props) {
   //!ADD POINTS
   const fetchMorePoints = async (amount) => {
     let resultmsg;
-    let raw = JSON.stringify({ amount: amount });
-    let requestOptionsPoints = {
-      method: 'POST',
-      headers: myHeaders,
-      body: raw,
-      redirect: 'follow',
-    };
 
-    await fetch(
-      'https://coding-challenge-api.aerolab.co/user/points',
-      requestOptionsPoints
-    )
-      .then((response) => response.text())
-      .then((result) => (resultmsg = result))
-      .catch((error) => {
-        resultmsg = ('Error', error);
-      });
+    if (userData.user.points + amount > 10000) {
+      resultmsg = 'Error: Too many points. Spend some first';
+    } else {
+      let raw = JSON.stringify({ amount: amount });
+      let requestOptionsPoints = {
+        method: 'POST',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow',
+      };
 
-    fetchUser();
+      await fetch(
+        'https://coding-challenge-api.aerolab.co/user/points',
+        requestOptionsPoints
+      )
+        .then((response) => response.text())
+        .then((result) => (resultmsg = result))
+        .catch((error) => {
+          resultmsg = ('Error', error);
+        });
 
+      fetchUser();
+    }
     //ACTIVATE MODAL
     let finalmsg;
     if (JSON.stringify(resultmsg).includes('Updated')) {
