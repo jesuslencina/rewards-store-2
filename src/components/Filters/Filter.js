@@ -9,7 +9,7 @@ function Filters() {
   const { settings, setSettings, products } = useContext(Context);
 
   const handleFilterChange = (filter) => {
-    setSettings({ ...settings, filtering: filter });
+    setSettings({ ...settings, filtering: filter, displayOffset: 0 });
   };
 
   const handlePaginationNext = () => {
