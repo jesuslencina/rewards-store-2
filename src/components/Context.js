@@ -44,7 +44,7 @@ export function DataProvider(props) {
   const [products, setProducts] = useState({});
 
   const [settings, setSettings] = useState({
-    filtering: 'default',
+    filtering: 1,
     displayOffset: 0,
     amountToDisplay: 12,
     amountOfProducts: 0,

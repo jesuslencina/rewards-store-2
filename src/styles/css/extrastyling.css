@@ -9,3 +9,16 @@ header img,
 .my-filters {
   animation: fadeIn 1s ease-in-out;
 }
+
+.orange {
+  background-color: #ff7800;
+  border-color: #ff7800;
+  color: white;
+  font-weight: 700;
+}
+
+.orange:hover {
+  background-color: #e97108;
+  border-color: #e97108;
+  color: white;
+}
