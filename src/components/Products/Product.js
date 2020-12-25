@@ -1,13 +1,39 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { Context } from '../Context';
 import BagIcon from '../../assets/icons/buy-blue.svg';
 import Coin from '../../assets/icons/coin.svg';
+import ProductHover from './ProductHover';
 
 function Product(props) {
-  const { userData } = useContext(Context);
+  const { userData, redeemProduct } = useContext(Context);
+  const [hover, setHover] = useState(false);
+
+  const showHover = () => {
+    setHover(true);
+  };
+
+  const hideHover = () => {
+    setHover(false);
+  };
+
+  const triggerRedeem = () => {
+    if (props.cost <= userData.user.points) {
+      redeemProduct(props.id);
+    }
+  };
 
   return (
-    <div className="card m-3 my-product">
+    <div
+      onClick={triggerRedeem}
+      onMouseOver={showHover}
+      onMouseLeave={hideHover}
+      className="card m-3 my-product">
+      {hover ? (
+        <ProductHover cost={props.cost} userpoints={userData.user.points} />
+      ) : (
+        ''
+      )}
+
       <div className="top-right">
         {props.cost > userData.user.points ? (
           <div>

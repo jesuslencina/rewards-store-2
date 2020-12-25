@@ -82,6 +82,47 @@ export function DataProvider(props) {
       .catch((error) => console.log('error', error));
   };
 
+  //!REDEEM PRODUCT
+  const redeemProduct = async (id) => {
+    let resultmsg;
+
+    let raw = JSON.stringify({ productId: id });
+
+    let requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      body: raw,
+      redirect: 'follow',
+    };
+
+    await fetch(
+      'https://coding-challenge-api.aerolab.co/redeem',
+      requestOptions
+    )
+      .then((response) => response.text())
+      .then((result) => {
+        resultmsg = result;
+      })
+      .catch((error) => {
+        resultmsg = ('error', error);
+      });
+
+    fetchUser();
+
+    //MODAL
+    let finalmsg;
+    if (JSON.stringify(resultmsg).includes('successfully')) {
+      finalmsg = 'SUCCESS';
+    } else {
+      finalmsg = resultmsg.replace('{', ' ').replace('}', ' ').toUpperCase();
+    }
+    displayModal({
+      class: 'is-active',
+      title: finalmsg,
+      msg: 'Operation: Redeeming a product',
+    });
+  };
+
   //!ADD POINTS
   const fetchMorePoints = async (amount) => {
     let resultmsg;
@@ -157,6 +198,7 @@ export function DataProvider(props) {
         fetchUser,
         fetchProducts,
         fetchMorePoints,
+        redeemProduct,
         closeModal,
       }}>
       {props.children}

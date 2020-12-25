@@ -4,6 +4,11 @@
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
+.my-product {
+  position: relative;
+  transition: transform 0.2s ease-in-out;
+}
+
 .my-product .top-right {
   position: absolute;
   z-index: 4;
@@ -23,4 +28,39 @@
 
 .my-product .top-right div img {
   margin-left: 0.25rem;
+}
+
+.my-product:hover {
+  transform: scale(1.05);
+}
+
+.product-hover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  color: white;
+  font-weight: 750;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-hover.does-afford {
+  cursor: pointer;
+  background-color: #15dcffe5;
+}
+
+.product-hover.does-afford div {
+  animation: rubberBand 1s;
+}
+
+.product-hover.doesnt-afford {
+  cursor: not-allowed;
+  background-color: #ff7700e7;
+}
+
+.product-hover div {
+  display: flex;
+  align-items: center;
 }
