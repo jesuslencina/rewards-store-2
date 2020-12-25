@@ -5,9 +5,7 @@ import Product from './Product';
 import './productStyles.css';
 
 function ProductsContainer() {
-  const { products, fetchProducts, settings, amountToDisplay } = useContext(
-    Context
-  );
+  const { products, settings } = useContext(Context);
 
   const sortProducts = (list) => {
     switch (settings.filtering) {
@@ -52,6 +50,8 @@ function ProductsContainer() {
         img={item.img.url}
         name={item.name}
         category={item.category}
+        id={item._id}
+        cost={item.cost}
       />
     );
   });
