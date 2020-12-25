@@ -52,10 +52,16 @@ function Filters() {
         </a>
       </div>
       <div className="pag-buttons">
-        <p className="has-text-black">
-          {settings.displayOffset + settings.amountToDisplay} of{' '}
-          {products.length}
-        </p>
+        {settings.displayOffset + settings.amountToDisplay < products.length ? (
+          <p className="has-text-black">
+            {settings.displayOffset + settings.amountToDisplay} of{' '}
+            {products.length}
+          </p>
+        ) : (
+          <p className="has-text-black">
+            {products.length} of {products.length}
+          </p>
+        )}
         <img
           src={leftArrow}
           onClick={handlePaginationPrevious}
