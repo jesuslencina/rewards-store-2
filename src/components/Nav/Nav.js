@@ -13,7 +13,9 @@ function Nav() {
   const [burger, setBurger] = useState('');
   const [modal, setModal] = useState('');
 
-  const { userData, fetchMorePoints } = useContext(Context);
+  const { userData, fetchMorePoints, settings, setSettings } = useContext(
+    Context
+  );
 
   const handleBurger = () => {
     burger === '' ? setBurger('is-active') : setBurger('');
@@ -65,7 +67,15 @@ function Nav() {
             </div>
             <div className="navbar-item">
               <div className="buttons">
-                <a className="button my-button">View history</a>
+                <a
+                  className="button my-button"
+                  onClick={() =>
+                    settings.viewingHistory
+                      ? setSettings({ ...settings, viewingHistory: false })
+                      : setSettings({ ...settings, viewingHistory: true })
+                  }>
+                  {!settings.viewingHistory ? 'View History' : 'View Products'}
+                </a>
                 <a className="button is-primary" onClick={handleModal}>
                   <strong>REDEEM POINTS</strong>
                 </a>

@@ -36,7 +36,7 @@ export function DataProvider(props) {
       id: '0',
       name: 'Loading...',
       points: 0,
-      redeemHistory: [],
+      redeemHistory: {},
       createDate: 'new Date(1510171520852)',
     },
   });

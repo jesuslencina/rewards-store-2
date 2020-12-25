@@ -22,3 +22,10 @@ header img,
   border-color: #e97108;
   color: white;
 }
+
+.history h1 {
+  margin-left: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 5rem;
+}
