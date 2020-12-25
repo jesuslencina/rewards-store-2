@@ -9,7 +9,7 @@ export function DataProvider(props) {
   myHeaders.append('Accept', 'application/json');
   myHeaders.append(
     'Authorization',
-    'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmNiYTMxMTI2ZjdkMjAwMjA0MTE0YzMiLCJpYXQiOjE2MDcxODEwNzN9.zn-vgFd1URNcc2iY0N6Zmikp291Fu2NsveJbxWLY_vY'
+    'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmU0MjIyMzI2ZjdkMjAwMjA0MTE0ZDMiLCJpYXQiOjE2MDg3ODY0Njd9.y-gmTy9zJvIdR9OecwmPGOtBXagHyD9sSNiYK0_lNe4'
   );
   myHeaders.append(
     'Cookie',
