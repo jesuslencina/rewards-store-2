@@ -5,11 +5,47 @@ import Product from './Product';
 import './productStyles.css';
 
 function ProductsContainer() {
-  const { products, fetchProducts, filtering, amountToDisplay } = useContext(
+  const { products, fetchProducts, settings, amountToDisplay } = useContext(
     Context
   );
 
-  const ProductList = Object.values(products).map((item) => {
+  const sortProducts = (list) => {
+    switch (settings.filtering) {
+      case 1:
+        return list;
+
+      case 2:
+        function compare2(a, b) {
+          if (a.cost < b.cost) {
+            return -1;
+          }
+          if (a.cost > b.cost) {
+            return 1;
+          }
+          return 0;
+        }
+
+        return [...list].sort(compare2);
+
+      case 3:
+        function compare3(a, b) {
+          if (a.cost < b.cost) {
+            return 1;
+          }
+          if (a.cost > b.cost) {
+            return -1;
+          }
+          return 0;
+        }
+
+        return [...list].sort(compare3);
+
+      default:
+        return list;
+    }
+  };
+
+  const ProductList = sortProducts(Object.values(products)).map((item) => {
     return (
       <Product
         key={item._id}
