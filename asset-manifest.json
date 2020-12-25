@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/rewards-store-2/static/css/main.0386e69d.chunk.css",
+    "main.js": "/rewards-store-2/static/js/main.87f9911f.chunk.js",
+    "main.js.map": "/rewards-store-2/static/js/main.87f9911f.chunk.js.map",
+    "runtime-main.js": "/rewards-store-2/static/js/runtime-main.12fbed1c.js",
+    "runtime-main.js.map": "/rewards-store-2/static/js/runtime-main.12fbed1c.js.map",
+    "static/css/2.a7126aa7.chunk.css": "/rewards-store-2/static/css/2.a7126aa7.chunk.css",
+    "static/js/2.8d8f15bb.chunk.js": "/rewards-store-2/static/js/2.8d8f15bb.chunk.js",
+    "static/js/2.8d8f15bb.chunk.js.map": "/rewards-store-2/static/js/2.8d8f15bb.chunk.js.map",
+    "static/js/3.6fef7140.chunk.js": "/rewards-store-2/static/js/3.6fef7140.chunk.js",
+    "static/js/3.6fef7140.chunk.js.map": "/rewards-store-2/static/js/3.6fef7140.chunk.js.map",
+    "index.html": "/rewards-store-2/index.html",
+    "static/css/2.a7126aa7.chunk.css.map": "/rewards-store-2/static/css/2.a7126aa7.chunk.css.map",
+    "static/css/main.0386e69d.chunk.css.map": "/rewards-store-2/static/css/main.0386e69d.chunk.css.map",
+    "static/js/2.8d8f15bb.chunk.js.LICENSE.txt": "/rewards-store-2/static/js/2.8d8f15bb.chunk.js.LICENSE.txt",
+    "static/media/aerolab-logo.0a8fb170.svg": "/rewards-store-2/static/media/aerolab-logo.0a8fb170.svg",
+    "static/media/arrow-left.e6eb9be1.svg": "/rewards-store-2/static/media/arrow-left.e6eb9be1.svg",
+    "static/media/arrow-right.3306c112.svg": "/rewards-store-2/static/media/arrow-right.3306c112.svg",
+    "static/media/buy-blue.c5c4f01c.svg": "/rewards-store-2/static/media/buy-blue.c5c4f01c.svg",
+    "static/media/coin.b8bc711d.svg": "/rewards-store-2/static/media/coin.b8bc711d.svg",
+    "static/media/header-x1.b6f067c6.png": "/rewards-store-2/static/media/header-x1.b6f067c6.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.12fbed1c.js",
+    "static/css/2.a7126aa7.chunk.css",
+    "static/js/2.8d8f15bb.chunk.js",
+    "static/css/main.0386e69d.chunk.css",
+    "static/js/main.87f9911f.chunk.js"
+  ]
+}
