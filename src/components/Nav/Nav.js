@@ -71,8 +71,16 @@ function Nav() {
                   className="button my-button"
                   onClick={() =>
                     settings.viewingHistory
-                      ? setSettings({ ...settings, viewingHistory: false })
-                      : setSettings({ ...settings, viewingHistory: true })
+                      ? setSettings({
+                          ...settings,
+                          viewingHistory: false,
+                          displayOffset: 0,
+                        })
+                      : setSettings({
+                          ...settings,
+                          viewingHistory: true,
+                          displayOffset: 0,
+                        })
                   }>
                   {!settings.viewingHistory ? 'View History' : 'View Products'}
                 </a>

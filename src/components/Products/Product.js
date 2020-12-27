@@ -52,6 +52,13 @@ function Product(props) {
       <div className="card-content">
         <p className="has-text-primary m-0 p-0">{props.category}</p>
         <h4 className="is-size-5 m-0">{props.name}</h4>
+        {props.cost > userData.user.points ? (
+          ''
+        ) : (
+          <i className="is-size-5 m-0 is-primary mobile-text">
+            Touch to redeem for {props.cost}
+          </i>
+        )}
       </div>
     </div>
   );

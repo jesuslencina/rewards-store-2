@@ -30,3 +30,27 @@ img {
   cursor: pointer;
   transform: scale(1.15);
 }
+
+@media screen and (max-width: 769px) {
+  .my-filters,
+  .buttons {
+    flex-direction: column;
+  }
+
+  .my-filters {
+    height: fit-content;
+  }
+
+  .my-filters b {
+    padding: 1rem;
+  }
+
+  .my-filters a {
+    margin: 0.5rem;
+  }
+
+  .pag-buttons {
+    margin-left: 0;
+    padding: 1rem;
+  }
+}

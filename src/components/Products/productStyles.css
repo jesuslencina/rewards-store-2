@@ -1,12 +1,16 @@
 .my-product-container {
   background-color: rgb(251, 249, 249);
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 
 .my-product {
   position: relative;
   transition: transform 0.2s ease-in-out;
+}
+
+.mobile-text {
+  display: none;
 }
 
 .my-product .top-right {
@@ -63,4 +67,18 @@
 .product-hover div {
   display: flex;
   align-items: center;
+}
+
+@media screen and (max-width: 769px) {
+  .my-product-container {
+    grid-template-columns: 1fr;
+  }
+
+  .product-hover {
+    display: none;
+  }
+
+  .mobile-text {
+    display: block;
+  }
 }

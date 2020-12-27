@@ -46,7 +46,7 @@ export function DataProvider(props) {
   const [settings, setSettings] = useState({
     filtering: 1,
     displayOffset: 0,
-    amountToDisplay: 12,
+    amountToDisplay: 10,
     amountOfProducts: 0,
     viewingHistory: false,
     modal: {
