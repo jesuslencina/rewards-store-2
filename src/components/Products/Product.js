@@ -56,7 +56,7 @@ function Product(props) {
           ''
         ) : (
           <i className="is-size-5 m-0 is-primary mobile-text">
-            Touch to redeem for {props.cost}
+            Touch to redeem for {props.cost} <img src={Coin} alt="Coin" />
           </i>
         )}
       </div>
